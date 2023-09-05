@@ -83,6 +83,7 @@ class TestApp:
 
             response = app.test_client().get('/baked_goods/by_price')
             data = json.loads(response.data.decode())
+            print(f"Data == {data}")
             assert(type(data) == list)
             for record in data:
                 assert(record['id'])
